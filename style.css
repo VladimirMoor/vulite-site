@@ -1,0 +1,54 @@
+:root {
+  --bg: #f7f7f4;
+  --card: #ffffff;
+  --text: #1d2130;
+  --muted: #5d6477;
+  --accent: #2f45a8;
+  --line: #e3e5ec;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171e;
+    --card: #1d2029;
+    --text: #e8eaf1;
+    --muted: #9aa1b5;
+    --accent: #8ea2ff;
+    --line: #2c303c;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+header img { width: 72px; height: 72px; }
+header h1 { margin: 0; font-size: 30px; line-height: 1.15; }
+header p { margin: 2px 0 0; color: var(--muted); }
+nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 20px 0 28px; font-size: 15px; }
+nav a, .lang button { color: var(--accent); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.lang { margin-left: auto; display: flex; gap: 10px; }
+.lang button { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.lang button[aria-pressed="true"] { color: var(--text); font-weight: 600; cursor: default; }
+section.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 24px 8px;
+  margin-bottom: 20px;
+}
+h2 { font-size: 21px; margin: 0 0 12px; }
+h3 { font-size: 17px; margin: 22px 0 6px; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); }
+.muted { color: var(--muted); font-size: 15px; }
+footer { color: var(--muted); font-size: 14px; margin-top: 32px; }
+/* With JavaScript only the reader's language is shown; without it both are. */
+.js [lang]:not(html).hidden { display: none; }
